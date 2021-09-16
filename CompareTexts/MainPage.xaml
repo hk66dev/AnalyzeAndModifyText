@@ -22,7 +22,7 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" IsTapEnabled="False">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" IsTapEnabled="False">
             <Button Content="Sort" HorizontalAlignment="Right" MinWidth="75" Click="SortText1_Click" ToolTipService.ToolTip="Sort text lines in ascending order"/>
             <Button Content="Remove duplicates" MinWidth="75" Click="RemoveDuplicatesText1_Click" ToolTipService.ToolTip="Remove duplicate text lines"/>
 
@@ -30,7 +30,7 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Padding="5" MaxHeight="25" FontSize="12px">Replace</TextBlock>
                     <TextBox x:Name="OldValue" MaxHeight="25" FontSize="12px" PlaceholderText="Old" Padding="8,2,2,2" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Text=",">
-                </TextBox>
+                    </TextBox>
                     <TextBox x:Name="NewValue" MaxHeight="25" FontSize="12px" PlaceholderText="New" Padding="8,2,2,2" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Text="NEWLINE">
                     </TextBox>
                 </StackPanel>
@@ -47,8 +47,13 @@
         <ComboBox x:Name="ResultMode" Margin="50,0,50,0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" MinWidth="50" MaxWidth="400" SelectionChanged="ResultMode_SelectionChanged"
                   ItemsSource="{x:Bind resultDisplayMode}"
                   SelectedIndex="1"></ComboBox>
-        <TextBlock Name="Result1" Grid.Row="4" Grid.Column="0" IsTextSelectionEnabled="True" Margin="10,0,10,0" TextWrapping="WrapWholeWords" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" FocusVisualPrimaryBrush="White"> Text Block 1</TextBlock>
-        <TextBlock Name="Result2" Grid.Row="4" Grid.Column="1" IsTextSelectionEnabled="True" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible"> Text Block 2</TextBlock>
+
+
+        <TextBox Name="Result1" Grid.Row="4" Grid.Column="0" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" FocusVisualPrimaryBrush="White"/>
+        <TextBox Name="Result2" Grid.Row="4" Grid.Column="1" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
+        <!--<TextBlock Name="Result1" Grid.Row="4" Grid.Column="0" IsTextSelectionEnabled="True" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" FocusVisualPrimaryBrush="White"> Text Block 1</TextBlock>
+        <TextBlock Name="Result2" Grid.Row="4" Grid.Column="1" IsTextSelectionEnabled="True" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible"> Text Block 2</TextBlock>-->
+        
         <TextBlock Name="StatResult1" Grid.Row="5" Grid.Column="0"></TextBlock>
         <TextBlock Name="StatResult2" Grid.Row="5" Grid.Column="1"></TextBlock>
 
