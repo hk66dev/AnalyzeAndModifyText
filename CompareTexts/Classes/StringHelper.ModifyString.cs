@@ -52,7 +52,7 @@ namespace CompareTexts.Classes
         /// <returns>IEnumerable collection</returns>
         public IEnumerable<ResultDisplayMode> GetResultDisplayModeValue()
         {
-            //IEnumerable<ResultDisplayMode> resultDisplayMode
+            //IEnumerable<ResultDisplayMode> resultDisplayMode1
             return Enum.GetValues(typeof(ResultDisplayMode)).Cast<ResultDisplayMode>(); // TODO
         }
 

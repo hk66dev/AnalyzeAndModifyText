@@ -27,20 +27,21 @@ namespace CompareTexts
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        IEnumerable<StringHelper.ResultDisplayMode> resultDisplayMode;
-
+        readonly IEnumerable<StringHelper.ResultDisplayMode> resultDisplayMode1;
+        readonly IEnumerable<StringHelper.ResultDisplayMode> resultDisplayMode2;
 
         public MainPage()
         {
             this.InitializeComponent();
 
             // Enum to combobox
-            //IEnumerable<StringHelper.ResultDisplayMode> resultDisplayMode = Enum.GetValues(typeof(StringHelper.ResultDisplayMode)).Cast<StringHelper.ResultDisplayMode>(); // TODO
-            StringHelper sh = new StringHelper();
-            resultDisplayMode = sh.GetResultDisplayModeValue();
+            //IEnumerable<StringHelper.ResultDisplayMode> resultDisplayMode1 = Enum.GetValues(typeof(StringHelper.ResultDisplayMode)).Cast<StringHelper.ResultDisplayMode>(); // TODO
+            StringHelper shResultDisplayMode = new StringHelper();
+            resultDisplayMode1 = shResultDisplayMode.GetResultDisplayModeValue();
+            resultDisplayMode2 = shResultDisplayMode.GetResultDisplayModeValue();
 
             //StringBuilder stringbuilder = new StringBuilder();
-            //foreach (var resultDisplayModeItem in resultDisplayMode)
+            //foreach (var resultDisplayModeItem in resultDisplayMode1)
             //{
             //    stringbuilder.Append(resultDisplayModeItem.GetDescription() + "|");//TODO test this
             //}
@@ -51,13 +52,14 @@ namespace CompareTexts
         {
             // Check if rows in text 1 is present in text 2. Display difference, format the output as desired "ResultDisplayMode
             CompareTwoStrings compStrings = new CompareTwoStrings(Text1.Text.Trim(), Text2.Text.Trim());
-            StringHelper sh = new StringHelper();
-            Result1.Text = sh.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode.SelectedValue.ToString()), compStrings.ToString());
+            StringHelper shResult1 = new StringHelper();
+            Result1.Text = shResult1.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode1.SelectedValue.ToString()), compStrings.ToString());
 
 
             // Check if rows in text 2 is present in text 1. Display difference.
             compStrings = new CompareTwoStrings(Text2.Text.Trim(), Text1.Text.Trim());
-            Result2.Text = sh.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode.SelectedValue.ToString()), compStrings.ToString());
+            StringHelper shResult2 = new StringHelper();
+            Result2.Text = shResult2.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode2.SelectedValue.ToString()), compStrings.ToString());
 
             // Display statistics of text 1
             StringHelper strInfo = new StringHelper(Text1.Text);
@@ -75,12 +77,13 @@ namespace CompareTexts
         {
             // Check if rows in text 1 is present in text 2. Display difference.
             CompareTwoStrings compStrings = new CompareTwoStrings(Text1.Text.Trim(), Text2.Text.Trim());
-            StringHelper sh = new StringHelper();
-            Result1.Text = sh.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode.SelectedValue.ToString()), compStrings.ToString());
+            StringHelper shResult1 = new StringHelper();
+            Result1.Text = shResult1.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode1.SelectedValue.ToString()), compStrings.ToString());
 
             // Check if rows in text 2 is present in text 1. Display difference.
             compStrings = new CompareTwoStrings(Text2.Text.Trim(), Text1.Text.Trim());
-            Result2.Text = sh.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode.SelectedValue.ToString()), compStrings.ToString());
+            StringHelper shResult2 = new StringHelper();
+            Result2.Text = shResult2.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode2.SelectedValue.ToString()), compStrings.ToString());
 
             // Display statistics of text 2
             StringHelper strInfo = new StringHelper(Text2.Text);
@@ -98,8 +101,8 @@ namespace CompareTexts
         {
             // Check if rows in text 1 is present in text 2. Display difference.
             CompareTwoStrings compStrings = new CompareTwoStrings(Text1.Text.Trim(), Text2.Text.Trim());
-            StringHelper sh = new StringHelper();
-            Result1.Text = sh.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode.SelectedValue.ToString()), compStrings.ToString());
+            StringHelper shResult1 = new StringHelper();
+            Result1.Text = shResult1.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode1.SelectedValue.ToString()), compStrings.ToString());
 
             // Display statistics of text 1
             StringHelper strInfo = new StringHelper(Text1.Text);
@@ -117,8 +120,8 @@ namespace CompareTexts
         {
             // Check if rows in text 2 is present in text 1. Display difference.
             CompareTwoStrings compStrings = new CompareTwoStrings(Text2.Text.Trim(), Text1.Text.Trim());
-            StringHelper sh = new StringHelper();
-            Result2.Text = sh.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode.SelectedValue.ToString()), compStrings.ToString());
+            StringHelper shResult2 = new StringHelper();
+            Result2.Text = shResult2.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode2.SelectedValue.ToString()), compStrings.ToString());
 
             // Display statistics of text 2
             StringHelper strInfo = new StringHelper(Text2.Text);
@@ -162,15 +165,20 @@ namespace CompareTexts
 
         private void ResultMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Check if rows in text 1 is present in text 2. Display difference, format the output as desired "ResultDisplayMode
+            // Check if rows in text 1 is present in text 2. Display difference, format the output as desired "ResultDisplayMode1
             CompareTwoStrings compStrings = new CompareTwoStrings(Text1.Text.Trim(), Text2.Text.Trim());
-            StringHelper sh = new StringHelper();
-            Result1.Text = sh.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode.SelectedValue.ToString()), compStrings.ToString());
+            StringHelper shResult1 = new StringHelper();
+            Result1.Text = shResult1.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode1.SelectedValue.ToString()), compStrings.ToString());
 
 
-            // Check if rows in text 2 is present in text 1. Display difference.
+            // Check if rows in text 2 is present in text 1. Display difference, format the output as desired "ResultDisplayMode2
             compStrings = new CompareTwoStrings(Text2.Text.Trim(), Text1.Text.Trim());
-            Result2.Text = sh.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode.SelectedValue.ToString()), compStrings.ToString());
+            StringHelper shResult2 = new StringHelper();
+
+            if (ResultMode2.SelectedValue != null)
+                Result2.Text = shResult2.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode2.SelectedValue.ToString()), compStrings.ToString());
+            else
+                Result2.Text = "Error";
 
             // Display statistics of text 1
             StringHelper strInfo = new StringHelper(Text1.Text);
@@ -190,11 +198,11 @@ namespace CompareTexts
 
         private void Replace1_Click(object sender, RoutedEventArgs e)
         {
-            if (OldValue.Text== "TAB" && NewValue.Text == "TAB")
+            if (OldValue.Text == "TAB" && NewValue.Text == "TAB")
             {
                 Text1.Text = Text1.Text.Replace("\t", "\t");
             }
-            else if(OldValue.Text == "NEWLINE" && NewValue.Text == "NEWLINE")
+            else if (OldValue.Text == "NEWLINE" && NewValue.Text == "NEWLINE")
             {
                 Text1.Text = Text1.Text.Replace(Environment.NewLine, Environment.NewLine);
             }
@@ -229,7 +237,7 @@ namespace CompareTexts
                     Text1.Text = Text1.Text.Replace(OldValue.Text, NewValue.Text);
                 }
             }
-                
+
         }
     }
 }

@@ -50,14 +50,14 @@ namespace CompareTexts.Classes
                 }
             }
 
-                string strDiff = string.Empty;
-                foreach (var diff in differences)
-                {
-                    strDiff += diff.ToString() + Environment.NewLine;
-                }
-
-                return strDiff;
+            string strDiff = string.Empty;
+            foreach (var diff in differences)
+            {
+                strDiff += diff.ToString() + Environment.NewLine;
             }
+
+            return strDiff;
+        }
 
         public override string ToString()
         {
