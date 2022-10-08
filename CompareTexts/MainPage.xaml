@@ -47,13 +47,13 @@
         <ComboBox x:Name="ResultMode1" Margin="50,0,50,0" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="50" MaxWidth="400" SelectionChanged="ResultMode_SelectionChanged"
                   ItemsSource="{x:Bind resultDisplayMode1}"
                   SelectedIndex="1"></ComboBox>
+        <ComboBox x:Name="ResultMode2" Margin="50,0,50,0" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="50" MaxWidth="400" SelectionChanged="ResultMode_SelectionChanged"
+                  ItemsSource="{x:Bind resultDisplayMode2}"
+                  SelectedIndex="1"></ComboBox>
 
+        <TextBox x:Name="Result1" Grid.Row="4" Grid.Column="0" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" IsReadOnly="True" AcceptsReturn="True"/>
+        <TextBox x:Name="Result2" Grid.Row="4" Grid.Column="1" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" IsReadOnly="True" AcceptsReturn="True"/>
 
-        <TextBox Name="Result1" Grid.Row="4" Grid.Column="0" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" FocusVisualPrimaryBrush="White"/>
-        <TextBox Name="Result2" Grid.Row="4" Grid.Column="1" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
-        <!--<TextBlock Name="Result1" Grid.Row="4" Grid.Column="0" IsTextSelectionEnabled="True" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" FocusVisualPrimaryBrush="White"> Text Block 1</TextBlock>
-        <TextBlock Name="Result2" Grid.Row="4" Grid.Column="1" IsTextSelectionEnabled="True" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible"> Text Block 2</TextBlock>-->
-        
         <TextBlock Name="StatResult1" Grid.Row="5" Grid.Column="0"></TextBlock>
         <TextBlock Name="StatResult2" Grid.Row="5" Grid.Column="1"></TextBlock>
 
