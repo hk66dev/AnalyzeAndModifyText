@@ -14,8 +14,8 @@
   <mp:PhoneIdentity PhoneProductId="263852ac-dcc7-4882-b050-9670ee521c36" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>CompareTexts</DisplayName>
-    <PublisherDisplayName>Hans Kronvall</PublisherDisplayName>
+    <DisplayName>Compare Texts</DisplayName>
+    <PublisherDisplayName>Hans</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
