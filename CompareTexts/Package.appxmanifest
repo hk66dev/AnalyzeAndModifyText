@@ -9,7 +9,7 @@
   <Identity
     Name="CompareTexts"
     Publisher="CN=Hans-Åke Kronvall"
-    Version="1.0.11.0" />
+    Version="1.0.12.0" />
 
   <mp:PhoneIdentity PhoneProductId="263852ac-dcc7-4882-b050-9670ee521c36" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
