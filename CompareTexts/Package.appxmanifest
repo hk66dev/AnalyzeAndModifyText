@@ -9,7 +9,7 @@
   <Identity
     Name="HKL.CompareTexts"
     Publisher="CN=HKL UWP Test Certificate"
-    Version="1.0.29.0" />
+    Version="1.0.30.0" />
 
   <mp:PhoneIdentity PhoneProductId="263852ac-dcc7-4882-b050-9670ee521c36" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
