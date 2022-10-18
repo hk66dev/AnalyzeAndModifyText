@@ -27,7 +27,7 @@
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Never</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm|arm64</AppxBundlePlatforms>
-    <HoursBetweenUpdateChecks>24</HoursBetweenUpdateChecks>
+    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppInstallerUri>C:\Users\hk66\OneDrive\dev\publish\CompareTexts</AppInstallerUri>
     <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
   </PropertyGroup>
