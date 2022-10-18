@@ -23,10 +23,10 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" IsTapEnabled="False">
-            <Button Content="Sort" HorizontalAlignment="Right" MinWidth="75" Click="SortText1_Click" ToolTipService.ToolTip="Sort text lines in ascending order"/>
-            <Button Content="Remove duplicates" MinWidth="75" Click="RemoveDuplicatesText1_Click" ToolTipService.ToolTip="Remove duplicate text lines"/>
+            <Button Content="Sort" HorizontalAlignment="Right" Margin="10,0,0,0" Click="SortText1_Click" ToolTipService.ToolTip="Sort text lines in ascending order" CornerRadius="10"/>
+            <Button Content="Remove duplicates" Margin="10,0,0,0" Click="RemoveDuplicatesText1_Click" ToolTipService.ToolTip="Remove duplicate text lines" CornerRadius="10"/>
 
-            <Button MinWidth="75" MaxHeight="40" Margin="20,0,0,0" ToolTipService.ToolTip="Replace text" Click="Replace1_Click" Padding="8,1,8,1" IsTapEnabled="False">
+            <Button MinWidth="75" MaxHeight="40" Margin="20,0,0,0" ToolTipService.ToolTip="Replace text" Click="Replace1_Click" Padding="8,1,8,1" IsTapEnabled="False" CornerRadius="10">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Padding="5" MaxHeight="25" FontSize="12px">Replace</TextBlock>
                     <TextBox x:Name="OldValue" MaxHeight="25" FontSize="12px" PlaceholderText="Old" Padding="8,2,2,2" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Text=",">
@@ -38,14 +38,14 @@
 
         </StackPanel>
 
-        <Button Content="Sort" Grid.Column="1" Margin="10,0,0,0" Click="SortText2_Click" ToolTipService.ToolTip="Sort text lines in ascending order"/>
-        <Button Content="Remove duplicates" Grid.Column="1" Margin="70,0,0,0" Click="RemoveDuplicatesText2_Click" ToolTipService.ToolTip="Remove duplicate text lines"/>
-        <TextBox x:Name="About" Grid.Column="1" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Button Content="Sort" Grid.Column="1" Margin="10,0,0,0" Click="SortText2_Click" ToolTipService.ToolTip="Sort text lines in ascending order" CornerRadius="10"/>
+        <Button Content="Remove duplicates" Grid.Column="1" Margin="70,0,0,0" Click="RemoveDuplicatesText2_Click" ToolTipService.ToolTip="Remove duplicate text lines" CornerRadius="10"/>
+        <TextBox x:Name="About" Grid.Column="1" Margin="200,0,0,0" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Right" VerticalAlignment="Top"/>
         
         <TextBox x:Name="Text1" Grid.Row="1" Grid.Column="0" PlaceholderText="Write or paste text here!" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible" TextChanged="Text1_TextChanged" Loaded="Text1_Loaded" Margin="10,0,10,0" BorderThickness="2,2,2,2"/>
         <TextBox x:Name="Text2" Grid.Row="1" Grid.Column="1" PlaceholderText="Write or paste text here!" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible" TextChanged="Text2_TextChanged" Loaded="Text2_Loaded" Margin="10,0,10,0"/>
-        <TextBlock Name="StatText1" Grid.Row="2" Grid.Column="0"></TextBlock>
-        <TextBlock Name="StatText2" Grid.Row="2" Grid.Column="1"></TextBlock>
+        <TextBlock Name="StatText1" Grid.Row="2" Grid.Column="0" Margin="10,0,0,0"></TextBlock>
+        <TextBlock Name="StatText2" Grid.Row="2" Grid.Column="1" Margin="10,0,0,0"></TextBlock>
         <ComboBox x:Name="ResultMode1" Margin="50,0,50,0" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="50" MaxWidth="400" SelectionChanged="ResultMode_SelectionChanged"
                   ItemsSource="{x:Bind resultDisplayMode1}"
                   SelectedIndex="1"></ComboBox>
@@ -56,7 +56,7 @@
         <TextBox x:Name="Result1" Grid.Row="4" Grid.Column="0" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" IsReadOnly="True" AcceptsReturn="True"/>
         <TextBox x:Name="Result2" Grid.Row="4" Grid.Column="1" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" IsReadOnly="True" AcceptsReturn="True"/>
 
-        <TextBlock Name="StatResult1" Grid.Row="5" Grid.Column="0">kdkdkdk</TextBlock>
-        <TextBlock Name="StatResult2" Grid.Row="5" Grid.Column="1"></TextBlock>
+        <TextBlock Name="StatResult1" Grid.Row="5" Grid.Column="0" Margin="10,0,0,0"></TextBlock>
+        <TextBlock Name="StatResult2" Grid.Row="5" Grid.Column="1" Margin="10,0,0,0"></TextBlock>
     </Grid>
 </Page>
