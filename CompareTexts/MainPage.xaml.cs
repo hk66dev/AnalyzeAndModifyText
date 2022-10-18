@@ -15,6 +15,8 @@ using CompareTexts.Classes;
 using System.Linq;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Reflection;
+using Windows.ApplicationModel;
 
 
 
@@ -39,6 +41,11 @@ namespace CompareTexts
             StringHelper shResultDisplayMode = new StringHelper();
             resultDisplayMode1 = shResultDisplayMode.GetResultDisplayModeValue();
             resultDisplayMode2 = shResultDisplayMode.GetResultDisplayModeValue();
+
+            // About
+            About.Text = $"File version: {Assembly.GetEntryAssembly().GetCustomAttribute<AssemblyFileVersionAttribute>().Version} - Package version: ";
+            About.Text = About.Text + $"{Package.Current.Id.Version.Major}.{Package.Current.Id.Version.Minor}.{Package.Current.Id.Version.Build}.{Package.Current.Id.Version.Revision}";
+
 
             //StringBuilder stringbuilder = new StringBuilder();
             //foreach (var resultDisplayModeItem in resultDisplayMode1)
