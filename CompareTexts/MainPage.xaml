@@ -23,10 +23,10 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" IsTapEnabled="False">
-            <Button Content="Sort" HorizontalAlignment="Right" MinWidth="75" Click="SortText1_Click" ToolTipService.ToolTip="Sort text lines in ascending order"/>
-            <Button Content="Remove duplicates" MinWidth="75" Click="RemoveDuplicatesText1_Click" ToolTipService.ToolTip="Remove duplicate text lines"/>
+            <Button Content="Sort" HorizontalAlignment="Right" Margin="10,0,0,0" Click="SortText1_Click" ToolTipService.ToolTip="Sort text lines in ascending order" CornerRadius="10"/>
+            <Button Content="Remove duplicates" Margin="10,0,0,0" Click="RemoveDuplicatesText1_Click" ToolTipService.ToolTip="Remove duplicate text lines" CornerRadius="10"/>
 
-            <Button MinWidth="75" MaxHeight="40" Margin="20,0,0,0" ToolTipService.ToolTip="Replace text" Click="Replace1_Click" Padding="8,1,8,1" IsTapEnabled="False">
+            <Button MinWidth="75" MaxHeight="40" Margin="20,0,0,0" ToolTipService.ToolTip="Replace text" Click="Replace1_Click" Padding="8,1,8,1" IsTapEnabled="False" CornerRadius="10">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Padding="5" MaxHeight="25" FontSize="12px">Replace</TextBlock>
                     <TextBox x:Name="OldValue" MaxHeight="25" FontSize="12px" PlaceholderText="Old" Padding="8,2,2,2" VerticalContentAlignment="Center" VerticalAlignment="Stretch" Text=",">
@@ -38,8 +38,8 @@
 
         </StackPanel>
 
-        <Button Content="Sort" Grid.Column="1" Margin="10,0,0,0" Click="SortText2_Click" ToolTipService.ToolTip="Sort text lines in ascending order"/>
-        <Button Content="Remove duplicates" Grid.Column="1" Margin="70,0,0,0" Click="RemoveDuplicatesText2_Click" ToolTipService.ToolTip="Remove duplicate text lines"/>
+        <Button Content="Sort" Grid.Column="1" Margin="10,0,0,0" Click="SortText2_Click" ToolTipService.ToolTip="Sort text lines in ascending order" CornerRadius="10"/>
+        <Button Content="Remove duplicates" Grid.Column="1" Margin="70,0,0,0" Click="RemoveDuplicatesText2_Click" ToolTipService.ToolTip="Remove duplicate text lines" CornerRadius="10"/>
         <TextBox x:Name="About" Grid.Column="1" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Right" VerticalAlignment="Top"/>
         
         <TextBox x:Name="Text1" Grid.Row="1" Grid.Column="0" PlaceholderText="Write or paste text here!" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible" TextChanged="Text1_TextChanged" Loaded="Text1_Loaded" Margin="10,0,10,0" BorderThickness="2,2,2,2"/>
