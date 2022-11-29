@@ -160,14 +160,14 @@ namespace CompareTexts
         {
             ////Remove duplicates
             ListHelper listHelp = new ListHelper(Text1.Text);
-            Text1.Text = listHelp.StringOfDistinctList;
+            Text1.Text = listHelp.StringOfDistinctList.Trim();
         }
 
         private void RemoveDuplicatesText2_Click(object sender, RoutedEventArgs e)
         {
             ////Remove duplicates
             ListHelper listHelp = new ListHelper(Text2.Text);
-            Text2.Text = listHelp.StringOfDistinctList;
+            Text2.Text = listHelp.StringOfDistinctList.Trim();
         }
 
         private void ResultMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
