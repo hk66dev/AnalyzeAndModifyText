@@ -167,7 +167,7 @@ namespace CompareTexts.Classes
         /// <returns>string of intact list</returns>
         public override string ToString()
         {
-            return StringOfIntactList; // what to return ???hkl
+            return StringOfIntactList; //TODO what to return ???hkl
         }
 
         #endregion

@@ -205,46 +205,15 @@ namespace CompareTexts
 
         private void Replace1_Click(object sender, RoutedEventArgs e)
         {
-            if (OldValue.Text == "TAB" && NewValue.Text == "TAB")
-            {
-                Text1.Text = Text1.Text.Replace("\t", "\t");
-            }
-            else if (OldValue.Text == "NEWLINE" && NewValue.Text == "NEWLINE")
-            {
-                Text1.Text = Text1.Text.Replace(Environment.NewLine, Environment.NewLine);
-            }
-            else if (OldValue.Text == "NEWLINE" && NewValue.Text == "TAB")
-            {
-                Text1.Text = Text1.Text.Replace(Environment.NewLine, "\t");
-            }
-            else if (OldValue.Text == "TAB" && NewValue.Text == "NEWLINE")
-            {
-                Text1.Text = Text1.Text.Replace("\t", Environment.NewLine);
-            }
-            else if (OldValue.Text == "TAB")
-            {
-                Text1.Text = Text1.Text.Replace("\t", NewValue.Text);
-            }
-            else if (NewValue.Text == "TAB")
-            {
-                Text1.Text = Text1.Text.Replace(OldValue.Text, "\t");
-            }
-            else if (OldValue.Text == "NEWLINE")
-            {
-                Text1.Text = Text1.Text.Replace(Environment.NewLine, NewValue.Text);
-            }
-            else if (NewValue.Text == "NEWLINE")
-            {
-                Text1.Text = Text1.Text.Replace(OldValue.Text, Environment.NewLine);
-            }
-            else
-            {
-                if (OldValue.Text != string.Empty)
-                {
-                    Text1.Text = Text1.Text.Replace(OldValue.Text, NewValue.Text);
-                }
-            }
+            FindAndReplaceSubString text = new FindAndReplaceSubString(Text1.Text, FindStr1.Text,ReplaceStr1.Text);
+            Text1.Text = text.CorrectedString;
 
+        }
+
+        private void Replace2_Click(object sender, RoutedEventArgs e)
+        {
+            FindAndReplaceSubString text = new FindAndReplaceSubString(Text2.Text, FindStr2.Text, ReplaceStr2.Text);
+            Text2.Text = text.CorrectedString;
         }
     }
 }
