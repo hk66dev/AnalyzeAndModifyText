@@ -10,8 +10,8 @@ namespace CompareTexts.Classes
     {
 
         #region --- private variables
-        private  string replaceTwoCharNewLineWithOneChar;
 
+        private  string replaceTwoCharNewLineWithOneChar;
 
         #endregion
 
