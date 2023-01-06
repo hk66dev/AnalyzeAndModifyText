@@ -215,5 +215,15 @@ namespace CompareTexts
             FindAndReplaceSubString text = new FindAndReplaceSubString(Text2.Text, FindStr2.Text, ReplaceStr2.Text);
             Text2.Text = text.CorrectedString;
         }
+
+        private void MatchCase_Checked(object sender, RoutedEventArgs e)
+        {
+            Text1.Text = "Match Case --checked--";
+        }
+
+        private void MatchCase_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Text1.Text = "Match Case --unchecked--";
+        }
     }
 }

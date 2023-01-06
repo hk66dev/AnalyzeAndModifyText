@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CompareTexts.Classes
 {
     partial class StringHelper
     {
 
-        #region --- private variables
-
-        private  string replaceTwoCharNewLineWithOneChar;
-
-        #endregion
+        // variables
+        private string replaceTwoCharNewLineWithOneChar;
 
         #region --- constructors
-
         /// <summary>
         /// Construcor: default
         /// </summary>
@@ -39,30 +32,13 @@ namespace CompareTexts.Classes
         #endregion
 
         #region --- properties
-               
         /// <summary>
         /// Set and get string in StringHelper
         /// </summary>
         public string StrValue { get; set; }
-
-        /// <summary>
-        /// Replace a two character 'NewLine' = "\n\r" with a one character 'NewLine' = '\r'.
-        /// </summary>
-        public  string ReplaceTwoCharNewLineWithOneChar
-        {
-            get { return replaceTwoCharNewLineWithOneChar.Replace("\r\n", "\r"); }
-            set
-            {
-                replaceTwoCharNewLineWithOneChar = value;
-            }
-        }
-
-
-
         #endregion
 
         #region --- methods
-
         /// <summary>
         /// Counts the number of characters in the string
         /// </summary>
@@ -158,7 +134,6 @@ namespace CompareTexts.Classes
         {
             return $"{NumberOfLines()} lines, {NumberOfWords()} words, {NumberOfCharacters()} characters";
         }
-
         #endregion
     }
 }
