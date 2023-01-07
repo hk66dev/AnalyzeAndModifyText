@@ -37,10 +37,7 @@ namespace CompareTexts.Classes
             Tab,
             [Display(Name = "In Operator in SQL")]
             [Description("Selection for In Operator in SQL")]
-            InOperatorSQL,
-            [Display(Name = "Other separator")]
-            [Description("Change to other separator")]
-            Other
+            InOperatorSQL
         };
         #endregion
 
@@ -90,9 +87,6 @@ namespace CompareTexts.Classes
                     break;
                 case ResultDisplayMode.InOperatorSQL:
                     strResult = Modify(strModify: stringToModify, newSeparator: ", ", surround: "\'"); // test Ok
-                    break;
-                case ResultDisplayMode.Other:
-                    // TODO
                     break;
                 default:
                     break;

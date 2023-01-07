@@ -22,9 +22,18 @@
             <RowDefinition Height="75*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-
-        <!-- If checked, match case when comparing-->
-        <CheckBox x:Name="MatchCase" Content="Match case" Margin="10,0,0,0" ToolTipService.ToolTip="Match case when comparing texts" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="MatchCase_Checked" Unchecked="MatchCase_Unchecked"/>
+        
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" IsTapEnabled="False">
+            <!-- If checked, match case when comparing-->
+            <CheckBox x:Name="MatchCase" Content="Match case" Margin="10,0,0,0" ToolTipService.ToolTip="Match case when comparing texts"  
+                  HorizontalAlignment="Left" VerticalAlignment="Center" Checked="MatchCase_Checked" Unchecked="MatchCase_Unchecked"/>
+            <CheckBox x:Name="DisplayMatches" Content="Display matches"
+                      Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"  Checked="DisplayMatches_Checked" Unchecked="DisplayMatches_Unchecked" >
+                <ToolTipService.ToolTip>
+                    <TextBlock>Checked - display matches<LineBreak></LineBreak>Unchecked - display differences</TextBlock>
+                </ToolTipService.ToolTip>
+            </CheckBox>
+        </StackPanel>
         
         <!--About text. Displays a little app information-->
         <TextBox x:Name="About" Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Right" VerticalAlignment="Top"/>

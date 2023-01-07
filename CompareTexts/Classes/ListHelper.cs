@@ -74,7 +74,7 @@ namespace CompareTexts.Classes
                 {
                     stringOfIntactList = il.ToString() + Environment.NewLine;
                 }
-                return stringOfIntactList;
+                return stringOfIntactList.Trim();
             }
         }
 
@@ -152,7 +152,7 @@ namespace CompareTexts.Classes
                     stringOfDistinctList += dl.ToString() + Environment.NewLine;
                 }
 
-                return stringOfDistinctList;
+                return stringOfDistinctList.Trim();
             }
 
         }
@@ -167,7 +167,7 @@ namespace CompareTexts.Classes
         /// <returns>string of intact list</returns>
         public override string ToString()
         {
-            return StringOfIntactList; //TODO what to return ???hkl
+            return StringOfIntactList.Trim(); //TODO what to return ???hkl
         }
 
         #endregion
