@@ -8,47 +8,70 @@ namespace CompareTexts.Classes
 {
     class CompareTwoStrings
     {
-        private readonly string strValue1 = string.Empty;
-        private readonly string strValue2 = string.Empty;
+        public string Str1 { get; set; }
+        public string Str2 { get; set; }
+        public bool IsMatchCase { get; set; }
 
-        public CompareTwoStrings(string strVal1, string strVal2, bool matchCase)
+        public CompareTwoStrings(string str1, string str2, bool matchCase)
         {
-            strValue1 = strVal1;
-            strValue2 = strVal2;
+            Str1 = str1;
+            Str2 = str2;
+            IsMatchCase = matchCase;
         }
 
         /// <summary>
         /// Checks if a row in the first string is present in the second string
         /// </summary>
         /// <returns>String with the rows in the first string that are not present in the second string</returns>
-        public string CheckNotPresentRowsInTwoStrings()
+        public string FindNotMatchingStrings()
         {
 
-            ListHelper listHelp = new ListHelper(strValue1);
+            ListHelper listHelp = new ListHelper(Str1);
             List<string> rows1 = listHelp.IntactList;
-            listHelp = new ListHelper(strValue2);
+            listHelp = new ListHelper(Str2);
             List<string> rows2 = listHelp.IntactList;
+            // make strings in list low case 
+            List<string> lcRows2 = new List<string>();
+            foreach (var r2 in rows2)
+            {
+                lcRows2.Add(r2.ToString().ToLower());
+            }
 
             List<string> differences = new List<string>();
 
-            foreach (var r1 in rows1)
+            // check if comparing should be done as case sensitive or not
+            if (IsMatchCase)
             {
-                // if list rows2 not empty
-                if (rows2.Count > 0)
+                // comparing as case sensitive
+                foreach (var r1 in rows1)
                 {
-                    // if item in rows1 missing in rows2
-                    if (!rows2.Contains(r1))
+                    // if list rows2 not empty
+                    if (rows2.Count > 0)
                     {
-                        // add item to list differences
+                        // check if comparing as case sensitive
+                        if (IsMatchCase)
+                        {
+                            // if item in rows1 missing in rows2
+                            if (!rows2.Contains(r1))
+                            {
+                                // add item to list differences
+                                differences.Add(r1);
+                            }
+                            else if (!lcRows2.Contains(r1.ToLower()))
+                            {
+                                // add item to list differences
+                                differences.Add(r1);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // if 
                         differences.Add(r1);
                     }
                 }
-                else
-                {
-                    // if 
-                    differences.Add(r1);
-                }
             }
+
 
             string strDiff = string.Empty;
             foreach (var diff in differences)
@@ -61,8 +84,7 @@ namespace CompareTexts.Classes
 
         public override string ToString()
         {
-            //return $"{CheckNotPresentRowsInTwoStrings()}";
-            return CheckNotPresentRowsInTwoStrings().Trim();
+            return FindNotMatchingStrings().Trim();
         }
     }
 }
