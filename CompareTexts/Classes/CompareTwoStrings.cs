@@ -8,10 +8,10 @@ namespace CompareTexts.Classes
 {
     class CompareTwoStrings
     {
-        private string strValue1 = string.Empty;
-        private string strValue2 = string.Empty;
+        private readonly string strValue1 = string.Empty;
+        private readonly string strValue2 = string.Empty;
 
-        public CompareTwoStrings(string strVal1, string strVal2)
+        public CompareTwoStrings(string strVal1, string strVal2, bool matchCase)
         {
             strValue1 = strVal1;
             strValue2 = strVal2;

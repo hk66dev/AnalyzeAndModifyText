@@ -58,13 +58,13 @@ namespace CompareTexts
         private void Text1_TextChanged(object sender, TextChangedEventArgs e)
         {
             // Check if rows in text 1 is present in text 2. Display difference, format the output as desired "ResultDisplayMode
-            CompareTwoStrings compStrings = new CompareTwoStrings(Text1.Text.Trim(), Text2.Text.Trim());
+            CompareTwoStrings compStrings = new CompareTwoStrings(Text1.Text.Trim(), Text2.Text.Trim(), MatchCase.IsChecked ?? false);
             StringHelper shResult1 = new StringHelper();
             Result1.Text = shResult1.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode1.SelectedValue.ToString()), compStrings.ToString());
 
 
             // Check if rows in text 2 is present in text 1. Display difference.
-            compStrings = new CompareTwoStrings(Text2.Text.Trim(), Text1.Text.Trim());
+            compStrings = new CompareTwoStrings(Text2.Text.Trim(), Text1.Text.Trim(), MatchCase.IsChecked ?? false);
             StringHelper shResult2 = new StringHelper();
             Result2.Text = shResult2.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode2.SelectedValue.ToString()), compStrings.ToString());
 
@@ -83,12 +83,12 @@ namespace CompareTexts
         private void Text2_TextChanged(object sender, TextChangedEventArgs e)
         {
             // Check if rows in text 1 is present in text 2. Display difference.
-            CompareTwoStrings compStrings = new CompareTwoStrings(Text1.Text.Trim(), Text2.Text.Trim());
+            CompareTwoStrings compStrings = new CompareTwoStrings(Text1.Text.Trim(), Text2.Text.Trim(), MatchCase.IsChecked ?? false);
             StringHelper shResult1 = new StringHelper();
             Result1.Text = shResult1.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode1.SelectedValue.ToString()), compStrings.ToString());
 
             // Check if rows in text 2 is present in text 1. Display difference.
-            compStrings = new CompareTwoStrings(Text2.Text.Trim(), Text1.Text.Trim());
+            compStrings = new CompareTwoStrings(Text2.Text.Trim(), Text1.Text.Trim(), MatchCase.IsChecked ?? false);
             StringHelper shResult2 = new StringHelper();
             Result2.Text = shResult2.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode2.SelectedValue.ToString()), compStrings.ToString());
 
@@ -107,7 +107,7 @@ namespace CompareTexts
         private void Text1_Loaded(object sender, RoutedEventArgs e)
         {
             // Check if rows in text 1 is present in text 2. Display difference.
-            CompareTwoStrings compStrings = new CompareTwoStrings(Text1.Text.Trim(), Text2.Text.Trim());
+            CompareTwoStrings compStrings = new CompareTwoStrings(Text1.Text.Trim(), Text2.Text.Trim(), MatchCase.IsChecked ?? false);
             StringHelper shResult1 = new StringHelper();
             Result1.Text = shResult1.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode1.SelectedValue.ToString()), compStrings.ToString());
 
@@ -126,7 +126,7 @@ namespace CompareTexts
         private void Text2_Loaded(object sender, RoutedEventArgs e)
         {
             // Check if rows in text 2 is present in text 1. Display difference.
-            CompareTwoStrings compStrings = new CompareTwoStrings(Text2.Text.Trim(), Text1.Text.Trim());
+            CompareTwoStrings compStrings = new CompareTwoStrings(Text2.Text.Trim(), Text1.Text.Trim(), MatchCase.IsChecked ?? false);
             StringHelper shResult2 = new StringHelper();
             Result2.Text = shResult2.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode2.SelectedValue.ToString()), compStrings.ToString());
 
@@ -173,13 +173,13 @@ namespace CompareTexts
         private void ResultMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Check if rows in text 1 is present in text 2. Display difference, format the output as desired "ResultDisplayMode1
-            CompareTwoStrings compStrings = new CompareTwoStrings(Text1.Text.Trim(), Text2.Text.Trim());
+            CompareTwoStrings compStrings = new CompareTwoStrings(Text1.Text.Trim(), Text2.Text.Trim(), MatchCase.IsChecked ?? false);
             StringHelper shResult1 = new StringHelper();
             Result1.Text = shResult1.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode1.SelectedValue.ToString()), compStrings.ToString());
 
 
             // Check if rows in text 2 is present in text 1. Display difference, format the output as desired "ResultDisplayMode2
-            compStrings = new CompareTwoStrings(Text2.Text.Trim(), Text1.Text.Trim());
+            compStrings = new CompareTwoStrings(Text2.Text.Trim(), Text1.Text.Trim(), MatchCase.IsChecked ?? false);
             StringHelper shResult2 = new StringHelper();
 
             if (ResultMode2.SelectedValue != null)
