@@ -39,11 +39,22 @@ namespace CompareTexts.Classes
                 listHelp = new ListHelper(Str2);
                 List<string> rows2 = listHelp.IntactList;
 
-                // Test if one of the two strings is empty
+                // Test if one of the two strings are empty
                 if (string.IsNullOrWhiteSpace(Str1) || string.IsNullOrWhiteSpace(Str2))
                 {
-                    //  if one of the two strings is empty, copy list rows1 to list results
-                    results = new List<string>(rows1);
+                    // check if displaying matches or differences
+                    if (IsDisplayMatches)
+                    {
+                        // displaying matches, 
+                        // let list results be empty
+                        results.Clear();
+                    }
+                    else
+                    {
+                        // displaying differences
+                        // copy list rows1 to list results
+                        results = new List<string>(rows1);
+                    }
                 }
                 else
                 {
