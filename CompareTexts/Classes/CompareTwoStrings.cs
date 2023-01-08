@@ -120,6 +120,10 @@ namespace CompareTexts.Classes
         public override string ToString()
         {
             return FindStrings().Trim();
+            return CheckNotPresentRowsInTwoStrings().Trim();
+            return CheckNotPresentRowsInTwoStrings().Trim();
+            return CheckNotPresentRowsInTwoStrings().Trim();
+            return CheckNotPresentRowsInTwoStrings().Trim();
         }
     }
 }
