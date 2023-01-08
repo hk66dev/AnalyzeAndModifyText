@@ -15,14 +15,30 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="75*"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="75*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" IsTapEnabled="False">
+            <!-- If checked, match case when comparing-->
+            <CheckBox x:Name="MatchCase" Content="Match case" Margin="10,0,0,0" ToolTipService.ToolTip="Match case when comparing texts"  
+                  HorizontalAlignment="Left" VerticalAlignment="Center" Checked="MatchCase_Checked" Unchecked="MatchCase_Unchecked"/>
+            <CheckBox x:Name="DisplayMatches" Content="Display matches"
+                      Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"  Checked="DisplayMatches_Checked" Unchecked="DisplayMatches_Unchecked" >
+                <ToolTipService.ToolTip>
+                    <TextBlock>Checked - display matches<LineBreak></LineBreak>Unchecked - display differences</TextBlock>
+                </ToolTipService.ToolTip>
+            </CheckBox>
+        </StackPanel>
+        
+        <!--About text. Displays a little app information-->
+        <TextBox x:Name="About" Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Right" VerticalAlignment="Top"/>
 
-        <StackPanel Orientation="Horizontal" IsTapEnabled="False">
+        <StackPanel Orientation="Horizontal" IsTapEnabled="False" Grid.Row="1" Grid.Column="0">
             <Button Content="Sort" Margin="10,0,0,0" Click="SortText1_Click" ToolTipService.ToolTip="Sort text lines in ascending order" CornerRadius="10"/>
             <Button Content="Remove duplicates" Margin="10,0,0,0" Click="RemoveDuplicatesText1_Click" ToolTipService.ToolTip="Remove duplicate text lines" CornerRadius="10"/>
 
@@ -56,61 +72,56 @@
             </Button>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" IsTapEnabled="False" Grid.Column="1">
-        <Button Content="Sort" Grid.Column="1" Margin="10,0,0,0" Click="SortText2_Click" ToolTipService.ToolTip="Sort text lines in ascending order" CornerRadius="10"/>
-        <Button Content="Remove duplicates" Grid.Column="1" Margin="10,0,0,0" Click="RemoveDuplicatesText2_Click" ToolTipService.ToolTip="Remove duplicate text lines" CornerRadius="10"/>
+        <StackPanel Orientation="Horizontal" IsTapEnabled="False" Grid.Row="1" Grid.Column="1">
+            <Button Content="Sort" Grid.Column="1" Margin="10,0,0,0" Click="SortText2_Click" ToolTipService.ToolTip="Sort text lines in ascending order" CornerRadius="10"/>
+            <Button Content="Remove duplicates" Grid.Column="1" Margin="10,0,0,0" Click="RemoveDuplicatesText2_Click" ToolTipService.ToolTip="Remove duplicate text lines" CornerRadius="10"/>
 
-        <!--Button with to combo boxes inside-->
-        <Button MinWidth="75" Margin="10,0,0,0" ToolTipService.ToolTip="Replace text" Click="Replace2_Click"
+            <!--Button with to combo boxes inside-->
+            <Button MinWidth="75" Margin="10,0,0,0" ToolTipService.ToolTip="Replace text" Click="Replace2_Click"
                 Padding="1,1,5,1" IsTapEnabled="False" CornerRadius="10" UseSystemFocusVisuals="False"
                 Grid.Column="2">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock VerticalAlignment="Center" Padding="5" FontSize="12px">Replace</TextBlock>
-                <ComboBox x:Name="FindStr2" FontSize="12px" PlaceholderText="Find string" CornerRadius="5" IsEditable="True" SelectedItem="Newline">
-                    <ComboBoxItem Content=""/>
-                    <ComboBoxItem Content="Colon"/>
-                    <ComboBoxItem Content="Comma"/>
-                    <ComboBoxItem Content="Dot"/>
-                    <ComboBoxItem Content="Newline"/>
-                    <ComboBoxItem Content="Semicolon"/>
-                    <ComboBoxItem Content="Space"/>
-                    <ComboBoxItem Content="Tab"/>
-                </ComboBox>
-                <ComboBox x:Name="ReplaceStr2" FontSize="12px" PlaceholderText="Replace string" CornerRadius="5" IsEditable="True" SelectedItem="Comma">
-                    <ComboBoxItem Content=""/>
-                    <ComboBoxItem Content="Colon"/>
-                    <ComboBoxItem Content="Comma"/>
-                    <ComboBoxItem Content="Dot"/>
-                    <ComboBoxItem Content="Newline"/>
-                    <ComboBoxItem Content="Semicolon"/>
-                    <ComboBoxItem Content="Space"/>
-                    <ComboBoxItem Content="Tab"/>
-                </ComboBox>
-            </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Padding="5" FontSize="12px">Replace</TextBlock>
+                    <ComboBox x:Name="FindStr2" FontSize="12px" PlaceholderText="Find string" CornerRadius="5" IsEditable="True" SelectedItem="Newline">
+                        <ComboBoxItem Content=""/>
+                        <ComboBoxItem Content="Colon"/>
+                        <ComboBoxItem Content="Comma"/>
+                        <ComboBoxItem Content="Dot"/>
+                        <ComboBoxItem Content="Newline"/>
+                        <ComboBoxItem Content="Semicolon"/>
+                        <ComboBoxItem Content="Space"/>
+                        <ComboBoxItem Content="Tab"/>
+                    </ComboBox>
+                    <ComboBox x:Name="ReplaceStr2" FontSize="12px" PlaceholderText="Replace string" CornerRadius="5" IsEditable="True" SelectedItem="Comma">
+                        <ComboBoxItem Content=""/>
+                        <ComboBoxItem Content="Colon"/>
+                        <ComboBoxItem Content="Comma"/>
+                        <ComboBoxItem Content="Dot"/>
+                        <ComboBoxItem Content="Newline"/>
+                        <ComboBoxItem Content="Semicolon"/>
+                        <ComboBoxItem Content="Space"/>
+                        <ComboBoxItem Content="Tab"/>
+                    </ComboBox>
+                </StackPanel>
             </Button>
         </StackPanel>
 
-
-        <TextBox x:Name="About" Grid.Column="1" Margin="200,0,0,0" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-
-       <!--</StackPanel>hkl-->
-        
-        <TextBox x:Name="Text1" Grid.Row="1" Grid.Column="0" PlaceholderText="Write or paste text here!" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible" TextChanged="Text1_TextChanged" Loaded="Text1_Loaded" Margin="10,0,10,0" BorderThickness="2,2,2,2"/>
-        <TextBox x:Name="Text2" Grid.Row="1" Grid.Column="1" PlaceholderText="Write or paste text here!" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible" TextChanged="Text2_TextChanged" Loaded="Text2_Loaded" Margin="10,0,10,0"/>
-        <TextBlock Name="StatText1" Grid.Row="2" Grid.Column="0" Margin="10,0,0,0"></TextBlock>
-        <TextBlock Name="StatText2" Grid.Row="2" Grid.Column="1" Margin="10,0,0,0"></TextBlock>
-        <ComboBox x:Name="ResultMode1" Margin="50,0,50,0" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="50" MaxWidth="400" SelectionChanged="ResultMode_SelectionChanged"
+        <TextBox x:Name="Text1" Grid.Row="2" Grid.Column="0" PlaceholderText="Write or paste text here!" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible" TextChanged="Text1_TextChanged" Loaded="Text1_Loaded" Margin="10,0,10,0" BorderThickness="2,2,2,2"/>
+        <TextBox x:Name="Text2" Grid.Row="2" Grid.Column="1" PlaceholderText="Write or paste text here!" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible" TextChanged="Text2_TextChanged" Loaded="Text2_Loaded" Margin="10,0,10,0"/>
+        <TextBlock Name="StatText1" Grid.Row="3" Grid.Column="0" Margin="10,0,0,0"></TextBlock>
+        <TextBlock Name="StatText2" Grid.Row="3" Grid.Column="1" Margin="10,0,0,0"></TextBlock>
+        <ComboBox x:Name="ResultMode1" Margin="50,0,50,0" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="50" MaxWidth="400" SelectionChanged="ResultMode_SelectionChanged"
                   ItemsSource="{x:Bind resultDisplayMode1}"
                   Description=""
                   SelectedIndex="1"></ComboBox>
-        <ComboBox x:Name="ResultMode2" Margin="50,0,50,0" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="50" MaxWidth="400" SelectionChanged="ResultMode_SelectionChanged"
+        <ComboBox x:Name="ResultMode2" Margin="50,0,50,0" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="50" MaxWidth="400" SelectionChanged="ResultMode_SelectionChanged"
                   ItemsSource="{x:Bind resultDisplayMode2}"
                   SelectedIndex="1"></ComboBox>
 
-        <TextBox x:Name="Result1" Grid.Row="4" Grid.Column="0" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" IsReadOnly="True" AcceptsReturn="True"/>
-        <TextBox x:Name="Result2" Grid.Row="4" Grid.Column="1" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" IsReadOnly="True" AcceptsReturn="True"/>
+        <TextBox x:Name="Result1" Grid.Row="5" Grid.Column="0" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" IsReadOnly="True" AcceptsReturn="True"/>
+        <TextBox x:Name="Result2" Grid.Row="5" Grid.Column="1" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" IsReadOnly="True" AcceptsReturn="True"/>
 
-        <TextBlock Name="StatResult1" Grid.Row="5" Grid.Column="0" Margin="10,0,0,0"></TextBlock>
-        <TextBlock Name="StatResult2" Grid.Row="5" Grid.Column="1" Margin="10,0,0,0"></TextBlock>
+        <TextBlock Name="StatResult1" Grid.Row="6" Grid.Column="0" Margin="10,0,0,0"></TextBlock>
+        <TextBlock Name="StatResult2" Grid.Row="6" Grid.Column="1" Margin="10,0,0,0"></TextBlock>
     </Grid>
 </Page>
