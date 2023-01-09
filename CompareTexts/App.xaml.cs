@@ -14,6 +14,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 
 namespace CompareTexts
@@ -31,6 +34,10 @@ namespace CompareTexts
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            // App Center
+            AppCenter.Start("deea7e4c-41f7-45dd-af59-ca48e98bbb4e",
+                  typeof(Analytics), typeof(Crashes));
         }
 
         /// <summary>
