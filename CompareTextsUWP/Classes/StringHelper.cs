@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace CompareTexts.Classes
+namespace CompareTextsUWP.Classes
 {
     partial class StringHelper
     {

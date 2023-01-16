@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="HKL.CompareTexts"
+    Name="HKL.CompareTextsUWP"
     Publisher="CN=HKL UWP Test Certificate"
     Version="1.0.30.0" />
 
   <mp:PhoneIdentity PhoneProductId="263852ac-dcc7-4882-b050-9670ee521c36" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Compare Texts</DisplayName>
+    <DisplayName>Compare Texts UWP</DisplayName>
     <PublisherDisplayName>HKL UWP Test</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>

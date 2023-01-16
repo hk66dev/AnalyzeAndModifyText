@@ -11,7 +11,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using CompareTexts.Classes;
+using CompareTextsUWP.Classes;
 using System.Linq;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -22,7 +22,7 @@ using Windows.ApplicationModel;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace CompareTexts
+namespace CompareTextsUWP
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.

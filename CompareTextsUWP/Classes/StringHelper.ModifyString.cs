@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Markup;
 
-namespace CompareTexts.Classes
+namespace CompareTextsUWP.Classes
 {
     partial class StringHelper
     {

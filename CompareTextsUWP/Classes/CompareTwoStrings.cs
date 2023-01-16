@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Media.Casting;
 
-namespace CompareTexts.Classes
+namespace CompareTextsUWP.Classes
 {
     class CompareTwoStrings
     {

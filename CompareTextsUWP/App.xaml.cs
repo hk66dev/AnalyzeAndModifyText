@@ -19,7 +19,7 @@ using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 
 
-namespace CompareTexts
+namespace CompareTextsUWP
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.

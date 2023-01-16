@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CompareTexts.Classes
+namespace CompareTextsUWP.Classes
 {
     internal class FindAndReplaceSubString
     {

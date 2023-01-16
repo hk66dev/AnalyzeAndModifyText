@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Compare Texts")]
-[assembly: AssemblyDescription("Compare text and display differences")]
+[assembly: AssemblyTitle("Compare Texts UWP")]
+[assembly: AssemblyDescription("Compare text and display differences or matches")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany(".")]
 [assembly: AssemblyProduct("Compare Texts")]
