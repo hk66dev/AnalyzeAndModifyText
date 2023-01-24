@@ -167,7 +167,7 @@ namespace CompareTextsUWP.Classes
         /// <returns>string of intact list</returns>
         public override string ToString()
         {
-            return StringOfIntactList.Trim(); //TODO what to return ???hkl
+            return StringOfIntactList.Trim();
         }
 
         #endregion
