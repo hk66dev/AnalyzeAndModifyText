@@ -36,7 +36,7 @@
         </StackPanel>
         
         <!--About text. Displays a little app information-->
-        <TextBox x:Name="About" Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" TextWrapping="Wrap" Text="TextBox" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <TextBox x:Name="About" Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" TextWrapping="Wrap" Text="TextBox" CornerRadius="5" HorizontalAlignment="Right" VerticalAlignment="Top"/>
 
         <StackPanel Orientation="Horizontal" IsTapEnabled="False" Grid.Row="1" Grid.Column="0">
             <Button Content="Sort" Margin="10,0,0,0" Click="SortText1_Click" ToolTipService.ToolTip="Sort text lines in ascending order" CornerRadius="10"/>
