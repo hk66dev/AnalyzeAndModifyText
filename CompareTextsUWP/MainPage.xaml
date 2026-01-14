@@ -106,20 +106,35 @@
             </Button>
         </StackPanel>
 
-        <TextBox x:Name="Text1" Grid.Row="2" Grid.Column="0" PlaceholderText="Write or paste text here!" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible" TextChanged="Text1_TextChanged" Loaded="Text1_Loaded" Margin="10,0,10,0" BorderThickness="2,2,2,2"/>
-        <TextBox x:Name="Text2" Grid.Row="2" Grid.Column="1" PlaceholderText="Write or paste text here!" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible" TextChanged="Text2_TextChanged" Loaded="Text2_Loaded" Margin="10,0,10,0"/>
+        <TextBox x:Name="Text1" Grid.Row="2" Grid.Column="0" PlaceholderText="Write or paste text here!" 
+                 AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+                 ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="10,0,10,0" BorderThickness="2,2,2,2"
+                 TextChanged="Text1_TextChanged" Loaded="Text1_Loaded" />
+        <TextBox x:Name="Text2" Grid.Row="2" Grid.Column="1" PlaceholderText="Write or paste text here!" 
+                 AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+                 ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="10,0,10,0"
+                 TextChanged="Text2_TextChanged" Loaded="Text2_Loaded" />
         <TextBlock Name="StatText1" Grid.Row="3" Grid.Column="0" Margin="10,0,0,0"></TextBlock>
         <TextBlock Name="StatText2" Grid.Row="3" Grid.Column="1" Margin="10,0,0,0"></TextBlock>
-        <ComboBox x:Name="ResultMode1" Margin="50,0,50,0" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="50" MaxWidth="400" CornerRadius="5" SelectionChanged="ResultMode_SelectionChanged"
+        
+        <ComboBox x:Name="ResultMode1" Margin="50,0,50,0" Grid.Row="4" Grid.Column="0" 
+                  VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="50" MaxWidth="400" 
+                  CornerRadius="5" SelectionChanged="ResultMode_SelectionChanged"
                   ItemsSource="{x:Bind resultDisplayMode1}"
                   Description=""
                   SelectedIndex="1"></ComboBox>
-        <ComboBox x:Name="ResultMode2" Margin="50,0,50,0" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="50" MaxWidth="400" CornerRadius="5" SelectionChanged="ResultMode_SelectionChanged"
+        <ComboBox x:Name="ResultMode2" Margin="50,0,50,0" Grid.Row="4" Grid.Column="1" 
+                  VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="50" MaxWidth="400" 
+                  CornerRadius="5" SelectionChanged="ResultMode_SelectionChanged"
                   ItemsSource="{x:Bind resultDisplayMode2}"
                   SelectedIndex="1"></ComboBox>
 
-        <TextBox x:Name="Result1" Grid.Row="5" Grid.Column="0" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" IsReadOnly="True" AcceptsReturn="True"/>
-        <TextBox x:Name="Result2" Grid.Row="5" Grid.Column="1" Margin="10,0,10,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" IsReadOnly="True" AcceptsReturn="True"/>
+        <TextBox x:Name="Result1" Grid.Row="5" Grid.Column="0" Margin="10,0,10,0" TextWrapping="Wrap" 
+                 ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" 
+                 IsReadOnly="True" AcceptsReturn="True"/>
+        <TextBox x:Name="Result2" Grid.Row="5" Grid.Column="1" Margin="10,0,10,0" TextWrapping="Wrap" 
+                 ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" 
+                 IsReadOnly="True" AcceptsReturn="True"/>
 
         <TextBlock Name="StatResult1" Grid.Row="6" Grid.Column="0" Margin="10,0,0,0"></TextBlock>
         <TextBlock Name="StatResult2" Grid.Row="6" Grid.Column="1" Margin="10,0,0,0"></TextBlock>

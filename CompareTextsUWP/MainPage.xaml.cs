@@ -18,8 +18,6 @@ using System.Text;
 using System.Reflection;
 using Windows.ApplicationModel;
 
-
-
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace CompareTextsUWP
@@ -43,7 +41,7 @@ namespace CompareTextsUWP
 
             // About
             About.Text = $"File version: {Assembly.GetEntryAssembly().GetCustomAttribute<AssemblyFileVersionAttribute>().Version} - Package version: ";
-            About.Text = About.Text + $"{Package.Current.Id.Version.Major}.{Package.Current.Id.Version.Minor}.{Package.Current.Id.Version.Build}.{Package.Current.Id.Version.Revision}";
+            About.Text += $"{Package.Current.Id.Version.Major}.{Package.Current.Id.Version.Minor}.{Package.Current.Id.Version.Build}.{Package.Current.Id.Version.Revision}";
 
         }
 
@@ -136,7 +134,8 @@ namespace CompareTextsUWP
 
         private void UpdateMainPage()
         {
-            // Check if rows in text 1 is present in text 2. Display difference, format the output as desired "ResultDisplayMode
+            // Check if rows in text 1 is present in text 2. 
+            //Display difference, format the output as desired "ResultDisplayMode
             CompareTwoStrings compStrings1 = new CompareTwoStrings(Text1.Text.Trim(), Text2.Text.Trim(), MatchCase.IsChecked ?? false, DisplayMatches.IsChecked ?? false);
             StringHelper shResult1 = new StringHelper();
             Result1.Text = shResult1.ModifyString((StringHelper.ResultDisplayMode)Enum.Parse(typeof(StringHelper.ResultDisplayMode), ResultMode1.SelectedValue.ToString()), compStrings1.ToString());
